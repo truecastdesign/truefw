@@ -1,71 +1,11 @@
 title="Title tag text"
 description="Meta description tag text"
-label="Home"
-sort=0
 {endmeta}
-    <header class="homeHero">
-		{partial:header.phtml}
-		
-        <img src="/assets/images/home/welcome-2x.png" alt="Welcome to" class="welcome">   
-            
-        <img src="/assets/images/home/hero-logo-2x.png" alt="Albany Seventh-day Adventist Church" class="logoHero">     
+    <header>
+		{partial:header.phtml}   
     </header>
 
-	<section class="home1" title="">
-		We are an Adventist community church serving the city of Albany, Oregon and surrounding areas.
+	<section>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus consectetur esse, quo voluptatem atque nobis, adipisci, quia labore delectus ullam sapiente suscipit, eum. Hic assumenda error, ex reiciendis exercitationem a.
 	</section>
 	
-	<section class="home2">
-		<h2>SERVICE TIMES</h2>
-		<div>SATURDAYS</div>
-		<div>9:15 AM - 9:50 AM  EARLY WORSHIP SERVICE</div>
-		<div>9:30 AM - 10:40 AM  CHILDREN’S CLASSES</div>
-		<div>9:50 AM - 10:40 AM  ADULT BIBLE STUDY</div>
-		<div>10:50 AM - 12:15 PM  MAIN WORSHIP SERVICE</div>
-	</section>
-	
-	<section class="home3">
-		<div>GROW<br>TOGETHER</div>
-		<div>MAKE<br>DISCIPLES</div>
-		<div>PROCLAIM<br>GOSPEL</div>
-	</section>
-	
-	<section class="home4">
-		<p>Guided by the Bible and the Holy Spirit, we as Seventh-day Adventists pursue our mission through Christ-like living, communicating, discipling, teaching, healing, and serving. If you are just exploring the Christian faith for the first time or have been a faithful Christain for years, we want to connect with you and help you grow closer to the God of heaven.</p>
-		
-		<div>
-		<a href="/new-here" class="stdBtnB">NEW HERE?</a>
-		<a href="/live-stream" class="stdBtnB">WATCH LIVE</a>
-		<a href="/prayer-request" class="stdBtnB">NEED PRAYER?</a>
-		<a href="/social-media" class="stdBtnB">CONNECT WITH US</a>
-		</div>
-	</section>
-	
-	<section class="home5">
-		<h2>THIS WEEK - July 17</h2>
-		
-		<p>This week Ron Worrell will be presenting our sermon. Our scripture this week is Colossians 2:1-3.</p>
-        
-        <p>Please share the <a href="https://www.facebook.com/events/481528108972670/" title="View the Facebook Event" target="_blank">Facebook event</a> with your friends and family.</p>
-        
-        <div class="bulletin">
-        	<a href="" class="stdBtnB">CHURCH BULLETIN</a>
-        </div>
-		
-	</section>
-
-    <script>
-	TA.loaded(function(){
-		window.addEventListener("scroll", function(event) {
-			var scroll = this.scrollY;
-			if(scroll > 10)
-			{
-				TA.e('.headerBar').style.backgroundColor = '#333';
-			}
-			else if(scroll < 10)
-			{
-				TA.e('.headerBar').style.backgroundColor = 'transparent';
-			}		
-		});
-	});	
-	</script>
