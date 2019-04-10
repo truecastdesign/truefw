@@ -1,12 +1,18 @@
 <?php
+$GLOBALS['debug'] = false;
+$GLOBALS['dev'] = false;
+
 session_start();
 
-ini_set('display_errors', 'On');
-error_reporting(E_ALL & ~E_NOTICE);
-
-require 'vendor/autoload.php';
+if ($GLOBALS['debug']) {
+	error_reporting(E_ALL);
+} else {
+	error_reporting(E_ALL & E_WARNING & ~E_NOTICE);
+}
 
 define('BP', __DIR__);
+
+require 'vendor/autoload.php';
 
 $App = new \True\App;
 
