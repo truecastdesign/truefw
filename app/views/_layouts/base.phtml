@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title><?=(isset($_metaTitle)? $_metaTitle:'')?></title>
+	
+	<?if(!empty($_metaDescription)):?><meta name="description" content="<?=$_metaDescription?>"><?endif?>
+	
+	<?=$_css?>
+	
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+</head>
+
+<body class="index">
+	<?=(empty($GLOBALS['pageErrors'])? '':'<div id="displayNoticeBox"><div id="displayDebugError" onclick="closeNoticeBox()"><div>'.$GLOBALS['pageErrors'].'</div></div></div>')?>
+		<?=(empty($GLOBALS['errorUserError'])? '':'<div id="displayNoticeBox"><div id="displayUserError" onclick="closeNoticeBox()"><div>'.$GLOBALS['errorUserError'].'</div></div></div>')?>
+		<?=(empty($GLOBALS['errorUserWarning'])? '':'<div id="displayNoticeBox"><div id="displayUserWarning" onclick="closeNoticeBox()"><div>'.$GLOBALS['errorUserWarning'].'</div></div></div>')?>
+		<?=(empty($GLOBALS['errorUserNotice'])? '':'<div id="displayNoticeBox"><div id="displayUserNotice" onclick="closeNoticeBox()"><div>'.$GLOBALS['errorUserNotice'].'</div></div></div>')?>
+	<?=$_html?>
+
+	<footer>
+		© <?=date("Y")?> <?=$config->site->title?>
+		
+	</footer>
+	
+	<script>
+	
+	</script>
+
+	<!--[if lt IE 11]>
+		<script src="https://raw.githubusercontent.com/jonathantneal/flexibility/master/flexibility.js"></script>
+	<![endif]-->
+
+	
+
+	<?=$_js?>
+	
+</body>
+</html>

@@ -1,0 +1,115 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "59bc9283ec3a88e839a944c9d6486e98",
+    "packages": [
+        {
+            "name": "truecastdesign/hopper",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/truecastdesign/hopper.git",
+                "reference": "478dffa3cfd2416a023fc27348e8abdf5eeeb6b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/truecastdesign/hopper/zipball/478dffa3cfd2416a023fc27348e8abdf5eeeb6b7",
+                "reference": "478dffa3cfd2416a023fc27348e8abdf5eeeb6b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Truecast\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Baldwin",
+                    "email": "danielbaldwin@gmail.com"
+                }
+            ],
+            "description": "This library provides a simple and powerful way to SET and GET records from a PDO database.",
+            "keywords": [
+                "abstraction",
+                "database",
+                "db",
+                "dbal",
+                "dbpdo",
+                "framework",
+                "layer",
+                "php",
+                "slim"
+            ],
+            "time": "2017-12-11T04:32:14+00:00"
+        },
+        {
+            "name": "truecastdesign/welder",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/truecastdesign/welder.git",
+                "reference": "9bd241db38cb52c5fe52facc2046cb74179cd254"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/truecastdesign/welder/zipball/9bd241db38cb52c5fe52facc2046cb74179cd254",
+                "reference": "9bd241db38cb52c5fe52facc2046cb74179cd254",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Truecast\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Baldwin",
+                    "email": "danielbaldwin@gmail.com"
+                }
+            ],
+            "description": "This library provides a full featured HTML form builder, validator, and spam checker.",
+            "keywords": [
+                "HTML5",
+                "builder",
+                "checker",
+                "filter",
+                "form",
+                "html",
+                "mailer",
+                "maker",
+                "php",
+                "processor",
+                "spam",
+                "validator"
+            ],
+            "time": "2018-08-14T05:30:09+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

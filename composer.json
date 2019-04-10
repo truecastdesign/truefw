@@ -1,0 +1,15 @@
+{
+    "require": {
+        "truecastdesign/welder": "*",
+        "truecastdesign/hopper": "*",
+        "truecastdesign/true": "*"
+    },
+
+    "autoload": {
+        "psr-4":{
+            "App\\":"app/models",
+            "Truecast\\":"vendor/truecastdesign",
+            "True\\":"vendor/truecastdesign/true/src"
+        }
+    }
+}

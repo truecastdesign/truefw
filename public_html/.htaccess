@@ -1,0 +1,52 @@
+AddHandler application/x-httpd-php .html .phtml .php
+
+# compression directives
+SetOutputFilter DEFLATE
+
+<IfModule mod_deflate.c>
+	<filesMatch "\.(js|css|html|php|xml|svg)$">
+        SetOutputFilter DEFLATE
+    </filesMatch>
+</IfModule>
+
+# Turn off ETags
+Header unset ETag
+FileETag None
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+<FilesMatch "\.(css)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
+<FilesMatch "\.(js)$">
+Header set Cache-Control "max-age=216000, public"
+</FilesMatch>
+
+<FilesMatch "\.(xml|txt)$">
+Header set Cache-Control "max-age=216000, public"
+</FilesMatch>
+
+<FilesMatch "\.(html|htm)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
+<FilesMatch "\.(php)$">
+Header set Cache-Control "max-age=16000, public"
+</FilesMatch>
+
+<Files .htaccess>
+deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule .? - [E=Authorization:%{HTTP:Authorization}]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+</IfModule>
