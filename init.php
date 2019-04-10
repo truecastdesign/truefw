@@ -1,6 +1,6 @@
 <?php
-$GLOBALS['debug'] = false;
-$GLOBALS['dev'] = false;
+$GLOBALS['debug'] = true;
+$GLOBALS['dev'] = true;
 
 session_start();
 
