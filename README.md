@@ -1,6 +1,6 @@
 True micro framework
 =======================================
-V 1.1.1
+V 1.1.2
 
 These classes form the basic functionality of True framework
 
