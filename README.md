@@ -15,7 +15,7 @@ Install
 To install a new project with composer:
 
 ```sh
-$ composer create-project truecastdesign/truefw
+$ composer create-project truecastdesign/truefw project-name
 ```
 
 Usage

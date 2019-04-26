@@ -12,9 +12,9 @@
   }
   ],
    "require": {
+      "truecastdesign/true": "*",
       "truecastdesign/welder": "*",
-      "truecastdesign/hopper": "*",
-      "truecastdesign/true": "*"
+      "truecastdesign/hopper": "*"      
    },
   "autoload": {
         "psr-4":{
