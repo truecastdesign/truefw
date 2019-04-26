@@ -7,6 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Truecast\\' => array($vendorDir . '/truecastdesign', $vendorDir . '/truecastdesign/hopper/src', $vendorDir . '/truecastdesign/welder/src'),
-    'True\\' => array($vendorDir . '/truecastdesign/true/src'),
-    'App\\' => array($baseDir . '/app'),
+    'True\\' => array($vendorDir . '/truecastdesign/true/src', $vendorDir . '/truecastdesign/true/src'),
+    'App\\' => array($baseDir . '/app/models'),
 );

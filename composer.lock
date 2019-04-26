@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "59bc9283ec3a88e839a944c9d6486e98",
+    "content-hash": "77f4c36a33f56cbd42545cab631c01ff",
     "packages": [
         {
             "name": "truecastdesign/hopper",
-            "version": "v1.1.2",
+            "version": "v1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/truecastdesign/hopper.git",
-                "reference": "478dffa3cfd2416a023fc27348e8abdf5eeeb6b7"
+                "reference": "d954ae21b4e0ae0795fc5f11a6ed9ec0aa3891f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/truecastdesign/hopper/zipball/478dffa3cfd2416a023fc27348e8abdf5eeeb6b7",
-                "reference": "478dffa3cfd2416a023fc27348e8abdf5eeeb6b7",
+                "url": "https://api.github.com/repos/truecastdesign/hopper/zipball/d954ae21b4e0ae0795fc5f11a6ed9ec0aa3891f0",
+                "reference": "d954ae21b4e0ae0795fc5f11a6ed9ec0aa3891f0",
                 "shasum": ""
             },
             "require": {
@@ -51,20 +51,61 @@
                 "php",
                 "slim"
             ],
-            "time": "2017-12-11T04:32:14+00:00"
+            "time": "2019-04-23T22:56:25+00:00"
         },
         {
-            "name": "truecastdesign/welder",
-            "version": "v2.2.1",
+            "name": "truecastdesign/true",
+            "version": "v1.7.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/truecastdesign/welder.git",
-                "reference": "9bd241db38cb52c5fe52facc2046cb74179cd254"
+                "url": "https://github.com/truecastdesign/true.git",
+                "reference": "161c36c30d2e451d3ccff2355b28bd1c00737893"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/truecastdesign/welder/zipball/9bd241db38cb52c5fe52facc2046cb74179cd254",
-                "reference": "9bd241db38cb52c5fe52facc2046cb74179cd254",
+                "url": "https://api.github.com/repos/truecastdesign/true/zipball/161c36c30d2e451d3ccff2355b28bd1c00737893",
+                "reference": "161c36c30d2e451d3ccff2355b28bd1c00737893",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "True\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Baldwin",
+                    "email": "danielbaldwin@gmail.com"
+                }
+            ],
+            "description": "This library provides the base classes for running the True framework.",
+            "keywords": [
+                "framework",
+                "micro",
+                "php"
+            ],
+            "time": "2019-04-25T02:17:03+00:00"
+        },
+        {
+            "name": "truecastdesign/welder",
+            "version": "v2.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/truecastdesign/welder.git",
+                "reference": "927f3202d7427bf4a5696a3679be98d77f31f1b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/truecastdesign/welder/zipball/927f3202d7427bf4a5696a3679be98d77f31f1b4",
+                "reference": "927f3202d7427bf4a5696a3679be98d77f31f1b4",
                 "shasum": ""
             },
             "require": {
@@ -101,7 +142,7 @@
                 "spam",
                 "validator"
             ],
-            "time": "2018-08-14T05:30:09+00:00"
+            "time": "2019-01-18T01:08:16+00:00"
         }
     ],
     "packages-dev": [],

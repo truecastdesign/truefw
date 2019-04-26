@@ -28,10 +28,11 @@ class ComposerStaticInit1835653566a3c98175f8aec4e981080a
         'True\\' => 
         array (
             0 => __DIR__ . '/..' . '/truecastdesign/true/src',
+            1 => __DIR__ . '/..' . '/truecastdesign/true/src',
         ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/../..' . '/app/models',
         ),
     );
 
