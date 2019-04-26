@@ -1,8 +1,10 @@
-True micro framework
-=======================================
-V 1.1.2
+True Framework File Structure - New Project
 
-These classes form the basic functionality of True framework
+![True Framework](https://raw.githubusercontent.com/truecastdesign/true/master/assets/TrueFramework.png "True Framework")
+
+V 1.1.3
+
+This file structure is used by the True Framwork located at [GitHub Repo True]: https://github.com/truecastdesign/true
 
 
 Requires PHP 5.5 or newer.
@@ -10,10 +12,10 @@ Requires PHP 5.5 or newer.
 Install
 -------
 
-To install with composer:
+To install a new project with composer:
 
 ```sh
-$ composer create-project truecastdesign/true
+$ composer create-project truecastdesign/truefw
 ```
 
 Usage

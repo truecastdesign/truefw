@@ -1,11 +1,22 @@
 {
-    "require": {
-        "truecastdesign/welder": "*",
-        "truecastdesign/hopper": "*",
-        "truecastdesign/true": "*"
-    },
+  "name": "truecastdesign/truefw",
+  "type" : "file structure",
+  "description": "This file structure works with the True framework.",
+  "keywords": ["framework","php","micro","nano","true"],
+  "license": "MIT",
 
-    "autoload": {
+  "authors": [
+  {
+    "name": "Daniel Baldwin",
+    "email": "danielbaldwin@gmail.com"
+  }
+  ],
+   "require": {
+      "truecastdesign/welder": "*",
+      "truecastdesign/hopper": "*",
+      "truecastdesign/true": "*"
+   },
+  "autoload": {
         "psr-4":{
             "App\\":"app/models",
             "Truecast\\":"vendor/truecastdesign",
