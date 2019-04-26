@@ -1,6 +1,6 @@
 {
   "name": "truecastdesign/truefw",
-  "type" : "file structure",
+  "type" : "library",
   "description": "This file structure works with the True framework.",
   "keywords": ["framework","php","micro","nano","true"],
   "license": "MIT",
