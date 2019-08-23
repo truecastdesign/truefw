@@ -9,15 +9,32 @@
 	
 	<?=$_css?>
 	
-	<!-- Mobile Metas -->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+
+	<?if(!empty($_metaTitle)):?>
+	<meta property="og:title" content="<?=$_metaTitle?>">
+	<?endif?>
+
+	<?if(isset($App->view->ogPageType)):?>
+	<meta property="og:type" content="<?=$App->view->ogPageType?>">
+	<?else:?>
+	<meta property="og:type" content="website">
+	<?endif?>
+
+	<?if(isset($App->view->ogImage)):?>
+	<meta property="og:image" content="<?=$App->view->ogImage?>">
+	<?endif?>
+
+	<?if(!empty($_metaDescription)):?>
+	<meta property="og:description" content="<?=$_metaDescription?>">
+	<?endif?>
+
+	<meta property="og:url" content="<?=$request->url?>">
 </head>
 
 <body class="index">
-	<?=(empty($GLOBALS['pageErrors'])? '':'<div id="displayNoticeBox"><div id="displayDebugError" onclick="closeNoticeBox()"><div>'.$GLOBALS['pageErrors'].'</div></div></div>')?>
-		<?=(empty($GLOBALS['errorUserError'])? '':'<div id="displayNoticeBox"><div id="displayUserError" onclick="closeNoticeBox()"><div>'.$GLOBALS['errorUserError'].'</div></div></div>')?>
-		<?=(empty($GLOBALS['errorUserWarning'])? '':'<div id="displayNoticeBox"><div id="displayUserWarning" onclick="closeNoticeBox()"><div>'.$GLOBALS['errorUserWarning'].'</div></div></div>')?>
-		<?=(empty($GLOBALS['errorUserNotice'])? '':'<div id="displayNoticeBox"><div id="displayUserNotice" onclick="closeNoticeBox()"><div>'.$GLOBALS['errorUserNotice'].'</div></div></div>')?>
+	<?$App->displayErrors();?>
 	<?=$_html?>
 
 	<footer>
@@ -31,9 +48,7 @@
 
 	<!--[if lt IE 11]>
 		<script src="https://raw.githubusercontent.com/jonathantneal/flexibility/master/flexibility.js"></script>
-	<![endif]-->
-
-	
+	<![endif]-->	
 
 	<?=$_js?>
 	
