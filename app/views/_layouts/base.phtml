@@ -16,13 +16,13 @@
 	<meta property="og:title" content="<?=$_metaTitle?>">
 	<?endif?>
 
-	<?if(isset($App->view->ogPageType)):?>
+	<?if($App->view->ogPageType !== false):?>
 	<meta property="og:type" content="<?=$App->view->ogPageType?>">
 	<?else:?>
 	<meta property="og:type" content="website">
 	<?endif?>
-
-	<?if(isset($App->view->ogImage)):?>
+	
+	<?if($App->view->ogImage !== false):?>
 	<meta property="og:image" content="<?=$App->view->ogImage?>">
 	<?endif?>
 
@@ -30,7 +30,7 @@
 	<meta property="og:description" content="<?=$_metaDescription?>">
 	<?endif?>
 
-	<meta property="og:url" content="<?=$request->url?>">
+	<meta property="og:url" content="<?=$App->request->url->full?>">
 </head>
 
 <body class="index">
@@ -38,7 +38,7 @@
 	<?=$_html?>
 
 	<footer>
-		© <?=date("Y")?> <?=$config->site->title?>
+		© <?=date("Y")?> <?=$App->config->site->title?>
 		
 	</footer>
 	
