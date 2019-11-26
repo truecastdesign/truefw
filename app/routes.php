@@ -1,6 +1,6 @@
 <?php
 
-$App->any('/:path', function($request) use ($App) {
+$App->any('/*:path', function($request) use ($App) {
 	$vars = []; 
 	@include $App->controller($request->route->path);
 
