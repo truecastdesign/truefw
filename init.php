@@ -1,22 +1,21 @@
 <?php
-$GLOBALS['debug'] = true;
-$GLOBALS['dev'] = true;
-
 session_start();
 
-if ($GLOBALS['debug']) {
-	error_reporting(E_ALL);
-} else {
-	error_reporting(E_ALL & E_WARNING & ~E_NOTICE);
-}
+require_once 'vendor/autoload.php';
 
 define('BP', __DIR__);
 
-require 'vendor/autoload.php';
-
 $App = new \True\App;
 
-$App->load('../app/config/site.ini');
+$App->load(BP.'/app/config/site.ini');
+
+if ($App->config->site->debug) {
+	$GLOBALS['debug'] = true;
+	error_reporting(E_ALL & ~E_NOTICE);
+} else {
+	$GLOBALS['debug'] = false;
+	error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+}
 
 $App->view = new \True\PhpView;
 
