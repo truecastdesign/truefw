@@ -7,7 +7,7 @@ define('BP', __DIR__);
 
 $App = new \True\App;
 
-$App->load(BP.'/app/config/site.ini');
+$App->load('site.ini');
 
 if ($App->config->site->debug) {
 	$GLOBALS['debug'] = true;
