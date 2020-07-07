@@ -7,7 +7,7 @@ v1.1.8
 This file structure is used by the True Framwork located at [GitHub Repo True]: https://github.com/truecastdesign/true
 
 
-Requires PHP 5.5 or newer.
+Requires PHP 5.5 or newer. 
 
 Install
 -------
