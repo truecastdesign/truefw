@@ -1,5 +1,3 @@
-AddHandler application/x-httpd-php .html .phtml .php
-
 # compression directives
 SetOutputFilter DEFLATE
 
@@ -14,27 +12,15 @@ Header unset ETag
 FileETag None
 
 <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf)$">
-Header set Cache-Control "max-age=2592000, public"
+Header set Cache-Control "max-age=259200, public"
 </FilesMatch>
 
 <FilesMatch "\.(css)$">
-Header set Cache-Control "max-age=604800, public"
+Header set Cache-Control "max-age=259200, public"
 </FilesMatch>
 
 <FilesMatch "\.(js)$">
 Header set Cache-Control "max-age=216000, public"
-</FilesMatch>
-
-<FilesMatch "\.(xml|txt)$">
-Header set Cache-Control "max-age=216000, public"
-</FilesMatch>
-
-<FilesMatch "\.(html|htm)$">
-Header set Cache-Control "max-age=604800, public"
-</FilesMatch>
-
-<FilesMatch "\.(php)$">
-Header set Cache-Control "max-age=16000, public"
 </FilesMatch>
 
 <Files .htaccess>
