@@ -1,8 +1,8 @@
 <?php
 
-$App->any('/*:path', function($request) use ($App) {
+$App->router->any('/*:path', function($request) use ($App) {
 	$vars = []; 
-	@include $App->controller($request->route->path);
+	@include $App->router->controller($request->route->path);
 
 	$vars['config'] = $App->config;
 

@@ -1,5 +1,5 @@
 <?php
-session_start();
+#session_start();
 
 require_once 'vendor/autoload.php';
 
@@ -17,7 +17,10 @@ if ($App->config->site->debug) {
 	error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 }
 
-$App->view = new \True\PhpView;
+$App->request = new True\Request;
+$App->response = new True\Response;
+$App->router = new True\Router($App->request);
+$App->view = new True\PhpView;
 
 # global css and js files
 $App->view->css = '/vendor/truecastdesign/true/assets/default.css, /assets/css/site.css'; # global css files
@@ -25,3 +28,15 @@ $App->view->css = '/vendor/truecastdesign/true/assets/default.css, /assets/css/s
 
 # check routes
 require 'app/routes.php';
+
+function pr($item) {
+	echo '<pre>'; print_r($item); echo '</pre>';
+}
+
+function p($item) {
+	print_r($item);
+}
+
+function currency($str) {
+	return '$'.number_format($str, 2, '.', ',');
+}
