@@ -37,6 +37,22 @@ function p($item) {
 	print_r($item);
 }
 
+function pMethods($obj) {
+	print_r(get_class_methods($obj));
+}
+
 function currency($str) {
 	return '$'.number_format($str, 2, '.', ',');
+}
+
+function esc($str, $type='string') {
+	switch ($type) {
+		case 'string': $phpType = FILTER_SANITIZE_STRING; break;
+		case 'email': $phpType = FILTER_SANITIZE_EMAIL; break;
+		case 'encoded': $phpType = FILTER_SANITIZE_ENCODED; break;
+		case 'float': $phpType = FILTER_SANITIZE_NUMBER_FLOAT; break;
+		case 'int': $phpType = FILTER_SANITIZE_NUMBER_INT; break;
+		case 'url': $phpType = FILTER_SANITIZE_URL; break;
+	}
+	return filter_var($str, $phpType);
 }

@@ -2,7 +2,7 @@ True Framework File Structure - New Project
 
 ![True Framework](https://raw.githubusercontent.com/truecastdesign/true/master/assets/TrueFramework.png "True Framework")
 
-v1.1.10
+v1.1.11
 
 This file structure is used by the True Framwork located at [GitHub Repo True]: https://github.com/truecastdesign/true
 
@@ -107,7 +107,31 @@ This line:
 $App->view = new \True\PhpView();
 ```
 
-is for using the PHP view method. If you want to use something like Twig as your template system, you can change it here and use what ever you like.  
+is for using the PHP view method. If you want to use something like Twig as your template system, you can change it here and use what ever you like.
+
+## global functions
+
+### p(array|object)
+
+Quickly print out an array or object
+
+### pr(array|object)
+
+Preformatted print out an array or object
+
+### pMethods(class object)
+
+Print out a list of methods in the class. Good for exploring an API.
+
+### currency(string|int)
+
+Return number formatted for US currency
+
+### esc(string|int|float, type)
+
+Easily escape the output of all kinds of data with a shorter syntax than the builtin PHP function.
+Types you can pass: string (default), email, encoded, float, int, url.
+
 
 Issues
 ------
