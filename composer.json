@@ -15,7 +15,7 @@
    "require": {
       "truecastdesign/true": "*",
       "truecastdesign/welder": "*",
-      "truecastdesign/hopper": "*"      
+      "truecastdesign/hopper": "*"
    },
   "autoload": {
         "psr-4":{
