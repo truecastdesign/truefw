@@ -3,31 +3,31 @@
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title><?=(isset($_metaTitle)? $_metaTitle:'')?></title>
+	<title><?=(isset($App->view->title)? $App->view->title:'')?></title>
 	
-	<?if(!empty($_metaDescription)):?><meta name="description" content="<?=$_metaDescription?>"><?endif?>
+	<?if (!empty($App->view->description)):?><meta name="description" content="<?=$App->view->description?>"><?endif?>
 	
 	<?=$_css?>
 	
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
 
-	<?if(!empty($_metaTitle)):?>
-	<meta property="og:title" content="<?=$_metaTitle?>">
+	<?if (!empty($App->view->title)):?>
+	<meta property="og:title" content="<?=$App->view->title?>">
 	<?endif?>
 
-	<?if($App->view->ogPageType !== false):?>
+	<?if ($App->view->ogPageType !== false):?>
 	<meta property="og:type" content="<?=$App->view->ogPageType?>">
 	<?else:?>
 	<meta property="og:type" content="website">
 	<?endif?>
 	
-	<?if($App->view->ogImage !== false):?>
+	<?if ($App->view->ogImage !== false):?>
 	<meta property="og:image" content="<?=$App->view->ogImage?>">
 	<?endif?>
 
-	<?if(!empty($_metaDescription)):?>
-	<meta property="og:description" content="<?=$_metaDescription?>">
+	<?if (!empty($App->view->description)):?>
+	<meta property="og:description" content="<?=$App->view->description?>">
 	<?endif?>
 
 	<meta property="og:url" content="<?=$App->request->url->full?>">
