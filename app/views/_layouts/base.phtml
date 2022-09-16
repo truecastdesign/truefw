@@ -7,7 +7,7 @@
 	
 	<?if (!empty($App->view->description)):?><meta name="description" content="<?=$App->view->description?>"><?endif?>
 	
-	<?=$_css?>
+	<?=$App->view->cssoutput?>
 	
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
@@ -31,11 +31,13 @@
 	<?endif?>
 
 	<meta property="og:url" content="<?=$App->request->url->full?>">
+
+	<?=$App->view->headHtml?>
 </head>
 
 <body class="index">
 	<?$App->displayErrors();?>
-	<?=$_html?>
+	<?=$App->view->html?>
 
 	<footer>
 		© <?=date("Y")?> <?=$App->config->site->title?>
@@ -50,7 +52,7 @@
 		<script src="https://raw.githubusercontent.com/jonathantneal/flexibility/master/flexibility.js"></script>
 	<![endif]-->	
 
-	<?=$_js?>
+	<?=$App->view->jsoutput?>
 	
 </body>
 </html>
