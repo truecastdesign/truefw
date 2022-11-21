@@ -2,7 +2,7 @@ True Framework File Structure - New Project
 
 ![True Framework](https://raw.githubusercontent.com/truecastdesign/true/master/assets/TrueFramework.png "True Framework")
 
-v1.1.14
+v1.1.15
 
 This file structure is used by the True Framwork located at [GitHub Repo True]: https://github.com/truecastdesign/true
 
