@@ -14,7 +14,7 @@ if ($App->config->site->debug) {
 	error_reporting(E_ALL & ~E_NOTICE);
 } else {
 	$GLOBALS['debug'] = false;
-	error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+	error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
 }
 
 $App->request = new True\Request;
