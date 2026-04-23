@@ -7,11 +7,18 @@ define('BP', __DIR__);
 
 $App = new \True\App;
 
+// \True\App's constructor replaces the pretty set_exception_handler that
+// public_html/index.php installed. Restore it so uncaught exceptions render
+// the fatal-errors template instead of disappearing into App's error globals.
+true_register_fatal_handlers();
+
 $App->load('site.ini');
 
 if ($App->config->site->debug) {
 	$GLOBALS['debug'] = true;
 	error_reporting(E_ALL & ~E_NOTICE);
+	ini_set('display_errors', '1');
+	// ddev exec 'tail -50 /var/log/php_errors.log'
 } else {
 	$GLOBALS['debug'] = false;
 	error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
@@ -25,6 +32,15 @@ $App->view = new True\PhpView;
 # global css and js files
 $App->view->css = '/vendor/truecastdesign/true/assets/default.css, /assets/css/site.css'; # global css files
 #$App->view->js = '/assets/js/file1.js, /assets/js/file2.js'; # global js files
+
+try {
+	$dbConfig = $App->getConfig('MySQL.ini');
+
+	if (is_object($dbConfig) && !empty($dbConfig->driver) && !empty($dbConfig->host) && !empty($dbConfig->port) && !empty($dbConfig->username) && !empty($dbConfig->password) && !empty($dbConfig->database))
+   	$App->db = new Truecast\Hopper($dbConfig); # database connection
+} catch (PDOException $ex) {
+   echo $ex->getMessage();    
+}
 
 # check routes
 require 'app/routes.php';
@@ -41,24 +57,15 @@ function dump($obj, $label = "") {
 	echo "\n$label:"; var_dump($obj); echo "\n";
 }
 
-function dd(...$vars) {
-	foreach ($vars as $v) {
-	    dump($v);
-	}
-	exit(1);
-}
-
 function pMethods($obj) {
 	print_r(get_class_methods($obj));
 }
 
 function currency($str) {
-	return is_null($str)? '':'$'.number_format($str, 2, '.', ',');
+	return '$'.number_format($str, 2, '.', ',');
 }
 
-function esc(string|null $str, string $type='string') {
-	$str = $str ?? '';
-
+function esc($str, $type='string') {
 	switch ($type) {
 		case 'string': 
 			return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
@@ -71,9 +78,6 @@ function esc(string|null $str, string $type='string') {
 		case 'float': $phpType = FILTER_SANITIZE_NUMBER_FLOAT; break;
 		case 'int': $phpType = FILTER_SANITIZE_NUMBER_INT; break;
 		case 'url': $phpType = FILTER_SANITIZE_URL; break;
-		default:
-         return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 	}
-
-	return filter_var($str, $phpType) ?: '';
+	return filter_var($str, $phpType);
 }
