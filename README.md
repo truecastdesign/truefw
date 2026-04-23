@@ -25,6 +25,17 @@ Build your website in the app folder using the available folder structure.
 
 The app folder should be located beside the public folder. Assets, such as images, css, js, pdfs, etc., should be located in the assets folder inside the public folder.
 
+## Table of Contents for Detailed Docs of the True base classes
+[App](./docs/App.md)
+
+[Routing](./docs/Routes.md)
+
+[Authentication](./docs/Auth.md)
+
+[Task Queue](./docs/TaskQueue.md)
+
+[Nonce Generator](./docs/Nonce.md)
+
 ## Models
 
 The business logic should live in the app/models directory.

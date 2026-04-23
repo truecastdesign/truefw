@@ -29,5 +29,12 @@ sup { vertical-align: top; font-size: 0.7em; position: relative; top: -0.1em;}
 	
 }
 
+/* Error Messages */
 
+#displayNoticeBox {position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:1000; text-align:center;}
+#displayUserNotice, #displayUserWarning, #displayUserError {background:#74AD53 url(/assets/images/messageNotice.png) 12px 12px no-repeat; max-width:700px; min-height:94px; z-index:1000; box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+#displayUserNotice div, #displayUserWarning div, #displayUserError div {margin:0 0 0 93px; border-left:1px solid #fff; color:#fff; font-size:20px; min-height:74px; text-align:left; padding:10px 5px 10px 15px; text-align:left;}
+#displayUserWarning {background:#FFDC73 url(/assets/images/messageWarning.png) 12px 12px no-repeat;}
+#displayUserWarning div {color:#444;}
+#displayUserError {background:#D90000 url(/assets/images/messageError.png) 12px 12px no-repeat;}
 

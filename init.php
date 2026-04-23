@@ -41,15 +41,24 @@ function dump($obj, $label = "") {
 	echo "\n$label:"; var_dump($obj); echo "\n";
 }
 
+function dd(...$vars) {
+	foreach ($vars as $v) {
+	    dump($v);
+	}
+	exit(1);
+}
+
 function pMethods($obj) {
 	print_r(get_class_methods($obj));
 }
 
 function currency($str) {
-	return '$'.number_format($str, 2, '.', ',');
+	return is_null($str)? '':'$'.number_format($str, 2, '.', ',');
 }
 
-function esc($str, $type='string') {
+function esc(string|null $str, string $type='string') {
+	$str = $str ?? '';
+
 	switch ($type) {
 		case 'string': 
 			return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
@@ -62,6 +71,9 @@ function esc($str, $type='string') {
 		case 'float': $phpType = FILTER_SANITIZE_NUMBER_FLOAT; break;
 		case 'int': $phpType = FILTER_SANITIZE_NUMBER_INT; break;
 		case 'url': $phpType = FILTER_SANITIZE_URL; break;
+		default:
+         return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 	}
-	return filter_var($str, $phpType);
+
+	return filter_var($str, $phpType) ?: '';
 }
