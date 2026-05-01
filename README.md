@@ -2,12 +2,12 @@ True Framework File Structure - New Project
 
 ![True Framework](https://raw.githubusercontent.com/truecastdesign/true/master/assets/TrueFramework.png "True Framework")
 
-v1.1.18
+v1.1.22
 
 This file structure is used by the True Framwork located at [GitHub Repo True]: https://github.com/truecastdesign/true
 
 
-Requires PHP 5.5 or newer.  
+Requires PHP 8.2 or newer.  
 
 Install
 -------
