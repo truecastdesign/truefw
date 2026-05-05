@@ -67,11 +67,11 @@ function currency($str) {
 
 function esc($str, $type='string') {
 	switch ($type) {
-		case 'string': 
-			return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+		case 'string':
+			return htmlspecialchars($str ?? '', ENT_QUOTES, 'UTF-8');
 		break;
-		case 'nohtml': 
-			return htmlspecialchars(strip_tags($str), ENT_QUOTES, 'UTF-8');
+		case 'nohtml':
+			return htmlspecialchars(strip_tags($str ?? ''), ENT_QUOTES, 'UTF-8');
 		break;
 		case 'email': $phpType = FILTER_SANITIZE_EMAIL; break;
 		case 'encoded': $phpType = FILTER_SANITIZE_ENCODED; break;

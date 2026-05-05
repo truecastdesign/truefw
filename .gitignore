@@ -1,4 +1,8 @@
 app/config
 app/data
 tests
-**/.DS_Store~
+**/.DS_Store
+tmp
+.claude
+.ddev
+logs
