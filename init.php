@@ -65,19 +65,28 @@ function currency($str) {
 	return '$'.number_format($str, 2, '.', ',');
 }
 
-function esc($str, $type='string') {
+function esc(string|null $str, string $type='string') {
+	$str = $str ?? '';
+	$filterExtra = '';
+
 	switch ($type) {
-		case 'string':
-			return htmlspecialchars($str ?? '', ENT_QUOTES, 'UTF-8');
+		case 'string': 
+			return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 		break;
-		case 'nohtml':
-			return htmlspecialchars(strip_tags($str ?? ''), ENT_QUOTES, 'UTF-8');
+		case 'nohtml': 
+			return htmlspecialchars(strip_tags($str), ENT_QUOTES, 'UTF-8');
 		break;
 		case 'email': $phpType = FILTER_SANITIZE_EMAIL; break;
 		case 'encoded': $phpType = FILTER_SANITIZE_ENCODED; break;
-		case 'float': $phpType = FILTER_SANITIZE_NUMBER_FLOAT; break;
+		case 'float': 
+			$phpType = FILTER_SANITIZE_NUMBER_FLOAT; 
+			$filterExtra = FILTER_FLAG_ALLOW_FRACTION; 
+		break;
 		case 'int': $phpType = FILTER_SANITIZE_NUMBER_INT; break;
 		case 'url': $phpType = FILTER_SANITIZE_URL; break;
+		default:
+         return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 	}
-	return filter_var($str, $phpType);
+
+	return filter_var($str, $phpType, $filterExtra) ?: '';
 }
