@@ -33,13 +33,15 @@ $App->view = new True\PhpView;
 $App->view->css = '/vendor/truecastdesign/true/assets/default.css, /assets/css/site.css'; # global css files
 #$App->view->js = '/assets/js/file1.js, /assets/js/file2.js'; # global js files
 
-try {
-	$dbConfig = $App->getConfig('MySQL.ini');
+if (file_exists(BP.'/app/config/MySQL.ini')) {
+	try {
+		$dbConfig = $App->getConfig('MySQL.ini');
 
-	if (is_object($dbConfig) && !empty($dbConfig->driver) && !empty($dbConfig->host) && !empty($dbConfig->port) && !empty($dbConfig->username) && !empty($dbConfig->password) && !empty($dbConfig->database))
-   	$App->db = new Truecast\Hopper($dbConfig); # database connection
-} catch (PDOException $ex) {
-   echo $ex->getMessage();    
+		if (is_object($dbConfig) && !empty($dbConfig->driver) && !empty($dbConfig->host) && !empty($dbConfig->port) && !empty($dbConfig->username) && !empty($dbConfig->password) && !empty($dbConfig->database))
+			$App->db = new Truecast\Hopper($dbConfig); # database connection
+	} catch (PDOException $ex) {
+		echo $ex->getMessage();    
+	}
 }
 
 # check routes
