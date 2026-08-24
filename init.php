@@ -37,7 +37,7 @@ if (file_exists(BP.'/app/config/MySQL.ini')) {
 	try {
 		$dbConfig = $App->getConfig('MySQL.ini');
 
-		if (is_object($dbConfig) && !empty($dbConfig->driver) && !empty($dbConfig->host) && !empty($dbConfig->port) && !empty($dbConfig->username) && !empty($dbConfig->password) && !empty($dbConfig->database))
+		if (is_object($dbConfig) && !empty($dbConfig->driver) && !empty($dbConfig->host) && !empty($dbConfig->username) && !empty($dbConfig->password) && !empty($dbConfig->database))
 			$App->db = new Truecast\Hopper($dbConfig); # database connection
 	} catch (PDOException $ex) {
 		echo $ex->getMessage();    
@@ -57,6 +57,10 @@ function p($item) {
 
 function dump($obj, $label = "") {
 	echo "\n$label:"; var_dump($obj); echo "\n";
+}
+
+function dumpH($obj, $label = "") {
+	echo "<!--\n$label:"; var_dump($obj); echo "\n-->";
 }
 
 function pMethods($obj) {
