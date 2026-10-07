@@ -1,55 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <?=$App->view->headOutput?>
 
-	<meta charset="utf-8">
-	<?php if ($App->view->isset('title')):?>
-	<title><?=$App->view->title?></title>
-	<?php endif?>
-	
-	<?php if ($App->view->isset('description')):?>
-	<meta name="description" content="<?=$App->view->description?>">
-	<?php endif?>
-	
-	<?=$App->view->cssoutput?>
-	
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="<?=$App->config->site->title?>">
+    
+    
+    <?=$App->view->cssoutput?>
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
 
+     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Roping" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-	<?php if ($App->view->isset('ogPageType')):?>
-	<meta property="og:type" content="<?=$App->view->ogPageType?>">
-	<?php else:?>
-	<meta property="og:type" content="website">
-	<?php endif?>
-	
-	<?php if ($App->view->isset('ogImage')):?>
-	<meta property="og:image" content="<?=$App->view->ogImage?>">
-	<?php endif?>
+    <?php if (isset($App->view->headHtml)) echo $App->view->headHtml; ?>
 
-	<?php if ($App->view->isset('ogImageWidth')):?>
-	<meta property="og:image:width" content="<?=$App->view->ogImageWidth?>">
-	<?php endif?>
-
-	<?php if ($App->view->isset('ogImageHeight')):?>
-	<meta property="og:image:height" content="<?=$App->view->ogImageHeight?>">
-	<?php endif?>
-
-	<?php if ($App->view->isset('ogImageAlt')):?>
-	<meta property="og:image:alt" content="<?=$App->view->ogImageAlt?>">
-	<?php endif?>
-
-	<?php if ($App->view->isset('description')):?>
-	<meta property="og:description" content="<?=$App->view->description?>">
-	<?php endif?>
-
-	<meta property="og:url" content="<?=$App->request->url->full?>">
-
-	<?php if (isset($App->view->headHtml)) echo $App->view->headHtml;?>
+    
 </head>
 
 <body class="index">
-	<?php $App->displayErrors();?>
+    <?php $App->displayErrors(); ?>
 	<?=$App->view->html?>
 
 	<footer class="c"  style="margin-top:300px">
