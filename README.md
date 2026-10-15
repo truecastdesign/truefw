@@ -18,6 +18,8 @@ To install a new project with composer:
 $ composer create-project truecastdesign/truefw project-name
 ```
 
+Config files live in `app/config`. The repo ships them as `*.dist` templates (`site.ini.dist`, `MySQL.ini.dist`); `composer create-project` copies each one to its live name, and the live files are git-ignored so your site's settings are never committed. To add a new config file, create it as `name.ini.dist` and run `php bin/setup-config.php`.
+
 Usage
 -----
 

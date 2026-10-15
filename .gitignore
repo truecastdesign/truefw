@@ -1,5 +1,8 @@
-app/config
-app/data
+app/config/*
+!app/config/*.dist
+!app/config/.gitkeep
+app/data/*
+!app/data/.gitkeep
 tests
 **/.DS_Store
 tmp

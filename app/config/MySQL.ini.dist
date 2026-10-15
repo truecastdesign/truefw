@@ -1,0 +1,7 @@
+driver = "mysql"
+host = "db"
+port = 3306
+username = "db"
+password = "db"
+database = "db"
+charset = "utf8mb4"
